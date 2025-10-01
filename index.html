@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Bot - Seu Guia de Cafeterias</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+    <div class="chatbot-container">
+        <div class="chatbot-header">
+            ☕ Barista Bot
+        </div>
+
+        <div class="chatbot-messages" id="messageArea">
+            <div class="message bot-message">
+                Olá! Eu sou o **Barista Bot**, seu guia de bolso para o mundo das cafeterias! 
+            </div>
+            <div class="message bot-message">
+                Onde você está? Posso te ajudar a encontrar uma cafeteria incrível, sugerir drinks, ou falar sobre grãos!
+            </div>
+            <div class="message user-message">
+                Quero achar uma cafeteria perto de mim!
+            </div>
+            <div class="message bot-message">
+                Entendido! Para isso, eu precisaria da sua permissão de localização. Se preferir, digite o nome de uma cidade! 📍
+            </div>
+        </div>
+
+        <div class="chatbot-suggestions">
+            <button class="suggestion-button">Encontre Cafeterias Próximas</button>
+            <button class="suggestion-button">Sugira um Drink</button>
+            <button class="suggestion-button">O que é Latte Art?</button>
+        </div>
+
+        <div class="chatbot-input">
+            <input type="text" placeholder="Digite sua mensagem aqui..." id="userInput">
+            <button id="sendButton">Enviar</button>
+        </div>
+    </div>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+/* =========================
+   Variáveis de Cores
+========================= */
+:root { 
+    --cor-principal: #6F4E37;       /* Marrom Café Escuro */
+    --cor-fundo: #F5F5DC;           /* Bege Claro/Creme */
+    --cor-texto: #333;
+    --cor-chat-entrada: #EFEFEF;
+    --cor-chat-saida: #FFEBCD;      /* Amarelo Pêssego/Claro */
+}
+
+/* =========================
+   Estilos Globais
+========================= */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* =========================
+   Container Principal do Chatbot
+========================= */
+.chatbot-container {
+    width: 90%;
+    max-width: 650px;               /* Largura ideal para um chat */
+    height: 80vh;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* =========================
+   Cabeçalho
+========================= */
+.chatbot-header {
+    background-color: var(--cor-principal);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* =========================
+   Área de Mensagens
+========================= */
+.chatbot-messages {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Estilo das Mensagens */
+.message {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 18px;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+.user-message {
+    align-self: flex-end;
+    background-color: var(--cor-chat-entrada);
+    color: var(--cor-texto);
+    border-bottom-right-radius: 4px; /* "Bico" do balão */
+}
+
+.bot-message {
+    align-self: flex-start;
+    background-color: var(--cor-chat-saida);
+    color: var(--cor-texto);
+    border-bottom-left-radius: 4px;  /* "Bico" do balão */
+}
+
+/* =========================
+   Sugestões de Tópicos
+========================= */
+.chatbot-suggestions {
+    padding: 10px 20px 5px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    border-top: 1px solid #EEE;
+}
+
+.suggestion-button {
+    padding: 8px 12px;
+    border: 1px solid var(--cor-principal);
+    border-radius: 20px;
+    background-color: transparent;
+    color: var(--cor-principal);
+    cursor: pointer;
+    font-size: 0.85em;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.suggestion-button:hover {
+    background-color: var(--cor-principal);
+    color: white;
+}
+
+/* =========================
+   Área de Input
+========================= */
+.chatbot-input {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #DDD;
+}
+
+.chatbot-input input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #CCC;
+    border-radius: 20px;
+    margin-right: 10px;
+    font-size: 1em;
+}
+
+.chatbot-input button {
+    background-color: var(--cor-principal);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.chatbot-input button:hover {
+    background-color: #4F3325; /* Marrom mais escuro */
+}
