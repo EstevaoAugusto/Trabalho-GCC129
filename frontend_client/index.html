@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoffeeNet - Cliente</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container">
+        
+        <div id="login-view" class="view active">
+            <h2>Login Cliente</h2>
+            <form id="login-form">
+                <input type="email" id="login-email" placeholder="E-mail (cliente@teste.com)" value="cliente@teste.com" required>
+                <input type="password" id="login-password" placeholder="Senha (123)" value="123" required>
+                <button type="submit">Entrar</button>
+            </form>
+            <p id="login-error" class="error"></p>
+        </div>
+
+        <div id="main-view" class="view">
+            <header>
+                <h1>CoffeeNet</h1>
+                <p>Bem-vindo, <span id="user-email"></span>!</p>
+            </header>
+
+            <div id="chat-column">
+                <h2>Faça seu pedido</h2>
+                <div id="chat-messages">
+                    <div class="message bot">Olá! O que você gostaria de pedir hoje?</div>
+                </div>
+                <div id="ia-response" class="hidden">
+                    <p id="ia-suggestion"></p>
+                    <strong>Itens entendidos (até agora):</strong>
+                    <ul id="parsed-items-list"></ul>
+
+                    <div id="suggestion-buttons" class="hidden action-buttons">
+                        <button id="btn-accept-suggestion">✅ Sim, adicionar!</button>
+                        <button id="btn-reject-suggestion">❌ Não, obrigado.</button>
+                        <button id="btn-cancel-suggestion" class="cancel-button">⛔ Cancelar Pedido</button>
+                    </div>
+
+                    <div id="post-suggestion-buttons" class="hidden action-buttons">
+                        <button id="btn-add-more">➕ Adicionar Mais Itens</button>
+                        <button id="btn-finalize-post-suggestion">👍 Finalizar Pedido Agora</button>
+                        <button id="btn-cancel-post-suggestion" class="cancel-button">⛔ Cancelar Pedido</button>
+                    </div>
+                    <div id="confirm-buttons" class="hidden action-buttons">
+                        <button id="btn-confirm-order">👍 Finalizar e Confirmar Pedido</button>
+                        <button id="btn-cancel-order" class="cancel-button">⛔ Cancelar Pedido</button>
+                    </div>
+                </div>
+                <form id="chat-form"> <input type="text" id="chat-input" placeholder="Digite seu pedido ou 'finalizar'..." autocomplete="off">
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+
+            <div id="status-column">
+                <h2>Meus Pedidos</h2>
+                <div id="order-status-list">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

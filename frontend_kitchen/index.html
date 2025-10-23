@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoffeeNet - Cozinha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container">
+
+        <div id="login-view" class="view active">
+            <h2>Login Cozinha</h2>
+            <form id="login-form">
+                <input type="email" id="login-email" placeholder="E-mail (cozinha@teste.com)" value="cozinha@teste.com" required>
+                <input type="password" id="login-password" placeholder="Senha (123)" value="123" required>
+                <button type="submit">Entrar</button>
+            </form>
+            <p id="login-error" class="error"></p>
+        </div>
+        <div id="main-view" class="view">
+            <header>
+                <h1>Painel da Cozinha</h1>
+                <p>Conectado como: <span id="user-email"></span></p>
+                <button id="btn-goto-products" class="nav-button">Gerenciar Produtos</button>
+            </header>
+            <div id="kanban-board">
+                <div class="kanban-column" id="col-recebido">
+                    <h2 class="col-header status-0">Recebidos (0)</h2>
+                    <div class="card-container" id="container-0">
+                        </div>
+                </div>
+                <div class="kanban-column" id="col-em-producao">
+                    <h2 class="col-header status-1">Em Produção (0)</h2>
+                    <div class="card-container" id="container-1">
+                         </div>
+                </div>
+                </div>
+        </div>
+        <div id="product-view" class="view">
+             <header>
+                <h1>Gerenciamento de Produtos</h1>
+                <button id="btn-back-to-kanban" class="nav-button">Voltar ao Painel</button>
+            </header>
+
+            <div class="product-controls">
+                <button id="btn-add-new-product">➕ Adicionar Novo Produto</button>
+            </div>
+
+            <form id="product-form" class="product-form hidden">
+                <h3 id="form-title">Adicionar Produto</h3>
+                <input type="hidden" id="product-id">
+                <div>
+                    <label for="product-nome">Nome:</label>
+                    <input type="text" id="product-nome" required>
+                </div>
+                <div>
+                    <label for="product-preco">Preço (R$):</label>
+                    <input type="number" id="product-preco" step="0.01" min="0.01" required>
+                </div>
+                <div>
+                    <label for="product-categoria">Categoria:</label>
+                    <input type="text" id="product-categoria">
+                </div>
+                 <div>
+                    <label for="product-keywords">Palavras-chave (separadas por vírgula):</label>
+                    <input type="text" id="product-keywords" placeholder="ex: cafe, cafezinho, expresso">
+                </div>
+                <div>
+                    <label for="product-estoque">Estoque Atual:</label>
+                    <input type="number" id="product-estoque" step="1" min="0" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" id="btn-save-product">Salvar</button>
+                    <button type="button" id="btn-cancel-edit">Cancelar</button>
+                </div>
+            </form>
+
+            <div id="promotion-modal" class="modal hidden">
+                 <div class="modal-content">
+                    <h4>Definir Preço Promocional</h4>
+                    <input type="hidden" id="promo-product-id">
+                    <div>
+                        <label for="promo-price">Preço Promocional (R$):</label>
+                        <input type="number" id="promo-price" step="0.01" min="0.01" required>
+                    </div>
+                     <div class="form-actions">
+                        <button id="btn-save-promotion">Ativar Promoção</button>
+                        <button type="button" id="btn-cancel-promotion">Cancelar</button>
+                    </div>
+                 </div>
+            </div>
+
+            <div id="product-list-container">
+                <h2>Lista de Produtos</h2>
+                <table id="product-list-table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Preço</th>
+                            <th>Estoque</th>
+                            <th>Promoção</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="product-list-body">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+        </div> <script src="app.js"></script>
+</body>
+</html>

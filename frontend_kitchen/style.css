@@ -1,0 +1,206 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+}
+#app-container {
+    width: 100%;
+    margin: 0 auto;
+}
+.view { display: none; }
+.view.active { display: block; }
+#login-view {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+#login-view input {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+button {
+    background-color: #0275d8; /* Cor Cozinha */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button:hover { background-color: #025aa5; }
+.error { color: red; }
+header {
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+#kanban-board {
+    display: flex;
+    gap: 20px;
+    padding: 0 20px;
+    justify-content: center;
+}
+.kanban-column {
+    flex: 1;
+    max-width: 400px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+}
+.col-header {
+    padding: 15px;
+    color: white;
+    border-radius: 5px 5px 0 0;
+}
+.status-0 { background-color: #f0ad4e; } /* Recebido */
+.status-1 { background-color: #0275d8; } /* Em Produção */
+
+.card-container {
+    padding: 10px;
+    min-height: 500px;
+}
+.order-card {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.order-card h3 { 
+    margin-top: 0; 
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+.order-card ul {
+    padding-left: 20px;
+}
+.card-actions button {
+    margin-right: 5px;
+    padding: 5px 8px;
+    font-size: 0.9em;
+}
+.btn-producao { background-color: #0275d8; }
+.btn-pronto { background-color: #5cb85c; }
+.btn-cancelar { background-color: #d9534f; }
+
+
+
+#product-view {
+    padding: 20px;
+}
+#product-view header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.nav-button {
+     background-color: #6c757d; /* Cinza */
+     margin-left: 10px;
+}
+.nav-button:hover {
+     background-color: #5a6268;
+}
+
+/* Controles e Formulário */
+.product-controls {
+    margin-bottom: 20px;
+}
+.product-form, .modal-content {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    max-width: 500px; /* Limita largura do form */
+}
+.product-form h3, .modal-content h4 {
+    margin-top: 0;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+.product-form div, .modal-content div {
+    margin-bottom: 10px;
+}
+.product-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.product-form input[type="text"],
+.product-form input[type="number"] {
+    width: 95%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.form-actions {
+    margin-top: 15px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+.form-actions button {
+    margin-right: 10px;
+}
+#btn-cancel-edit, #btn-cancel-promotion {
+    background-color: #6c757d;
+}
+
+/* Tabela de Produtos */
+#product-list-container {
+    margin-top: 30px;
+}
+#product-list-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+#product-list-table th,
+#product-list-table td {
+    border: 1px solid #dee2e6;
+    padding: 10px;
+    text-align: left;
+}
+#product-list-table th {
+    background-color: #e9ecef;
+}
+#product-list-table td button {
+    margin-right: 5px;
+    padding: 3px 6px;
+    font-size: 0.8em;
+}
+.btn-edit { background-color: #ffc107; color: #333;}
+.btn-delete { background-color: #dc3545;}
+.btn-promote { background-color: #28a745;}
+.btn-unpromote { background-color: #ffc107; color: #333;}
+.promo-status {
+    font-weight: bold;
+}
+.promo-status.active { color: green; }
+.promo-status.inactive { color: gray; }
+
+/* Modal simples */
+.modal {
+    position: fixed; /* Ou use position: absolute se preferir */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+}
+.modal.hidden { display: none; }
+.modal-content { margin: 0; } /* Remove margem extra dentro do modal */
+
+.hidden { display: none !important; }

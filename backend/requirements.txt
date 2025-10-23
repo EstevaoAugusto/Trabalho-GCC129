@@ -1,0 +1,23 @@
+# Servidor principal (com suporte a websockets)
+fastapi
+uvicorn[standard]
+
+# Banco de Dados
+sqlalchemy
+psycopg2-binary
+
+# Validação e Configuração
+pydantic[email]
+python-dotenv
+
+# Autenticação e Segurança (JWT, Hashing)
+python-jose[cryptography]
+passlib==1.7.4
+argon2-cffi
+
+# Chamadas de API (para a IA 1 e IA 2)
+google-generativeai
+httpx
+
+# Processamento de Forms (para o Login)
+python-multipart
