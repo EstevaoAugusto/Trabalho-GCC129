@@ -72,11 +72,10 @@
                 }
 
                 userEmailSpan.textContent = userData.email;
-                loginView.classList.remove("active");
-                mainView.classList.add("active");
+                loginView.classList = "view inactive login"
+                mainView.classList = "view active main"
 
                 connectWebSocket();
-
             } catch (err) {
                 loginError.textContent = err.message;
             }
