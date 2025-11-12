@@ -94,17 +94,16 @@
 
                 if (message.type === "status_update") {
                     updateOrderStatus(message.data);
-                }
-                else if (message.type === "menu") {
+                } else if (message.type === "menu") {
                     currentMenu = message.data || [];
                     let menuText = "Olá! Bem-vindo ao CoffeeNet! 😊\nNosso cardápio de hoje é:\n\n";
                     if (message.data && message.data.length > 0) {
                         message.data.forEach(product => {
-                        if (product.em_promocao && product.preco_promocional != null) {
-                            menuText += `- ${product.nome} (Promoção: R$ ${product.preco_promocional.toFixed(2)})\n`; // Mostra preço promo e risca o normal
-                        } else {
-                            menuText += `- ${product.nome} (R$ ${product.preco.toFixed(2)})\n`; // Mostra preço normal
-                        }
+                            if (product.em_promocao && product.preco_promocional != null) {
+                                menuText += `- ${product.nome} (Promoção: R$ ${product.preco_promocional.toFixed(2)})\n`; // Mostra preço promo e risca o normal
+                            } else {
+                                menuText += `- ${product.nome} (R$ ${product.preco.toFixed(2)})\n`; // Mostra preço normal
+                            }
                         });
                         menuText += "\nO que você gostaria de pedir?";
                     } else {
