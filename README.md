@@ -1,18 +1,18 @@
-# ☕ CoffeeNet - Atendimento Inteligente para Cafeterias
+# CoffeeNet - Atendimento Inteligente para Cafeterias
 
 Bem-vindo ao **CoffeeNet!** Um sistema distribuído que usa Inteligência Artificial para melhorar o atendimento, aumentar as vendas e deixar os clientes mais satisfeitos no contexto de Cafeicultura.
 
 ---
 
-## 😥 A "Dor" — Problemas que acontecem em cafeterias
+## A "Dor" — Problemas que acontecem em cafeterias
 
 Identificamos três gargalos principais no atendimento:
 
-* 💸 **Vendas Perdidas:** O barista, na correria, esquece de oferecer promoções ou produtos complementares (upsell), diminuindo o ticket médio.
-* 😟 **Cliente Ansioso:** O cliente (especialmente em pedidos online) não sabe o status do seu pedido ("Na fila?", "Preparando?"), gerando uma experiência ruim.
-* 🤯 **Cozinha Confusa:** Comandas de papel e comunicação verbal causam erros, atrasos na produção e dificultam a gestão.
+* **Vendas Perdidas:** O barista, na correria, esquece de oferecer promoções ou produtos complementares (upsell), diminuindo o ticket médio.
+* **Cliente Ansioso:** O cliente (especialmente em pedidos online) não sabe o status do seu pedido ("Na fila?", "Preparando?"), gerando uma experiência ruim.
+* **Cozinha Confusa:** Comandas de papel e comunicação verbal causam erros, atrasos na produção e dificultam a gestão.
 
-## ✨ A Solução — O que o CoffeeNet resolve
+## A Solução — O que o CoffeeNet resolve
 
 * **Chatbot Inteligente:** Anota pedidos usando IA (spaCy) e sugere itens baseado no histórico do cliente e promoções (Gemini).
 * **Status em Tempo Real:** O cliente vê o status ("Recebido", "Em Produção", "Pronto") mudar automaticamente na tela.
@@ -20,9 +20,9 @@ Identificamos três gargalos principais no atendimento:
 
 ---
 
-## 🤓 Como Funciona? (A Mágica por Trás dos Panos)
+## Como Funciona?
 
-Explicando como as peças se encaixam, focando nos conceitos da disciplina:
+Explicando como as peças se encaixam, focando nos conceitos da disciplina de Sistemas Distribuidos:
 
 ### Por que isso é um Sistema Distribuído?
 
@@ -36,7 +36,7 @@ Eles são programas separados, rodando em "caixas" (contêineres Docker) diferen
 
 ### As Nossas Duas IAs (Os "Cérebros"):
 
-A gente usa duas IAs diferentes, como o professor pediu:
+A gente usa duas IAs diferentes:
 
 1. **IA 1: O "Tradutor" (spaCy / NLU)**
 
@@ -58,7 +58,7 @@ A gente usa duas IAs diferentes, como o professor pediu:
 
 ---
 
-## 🚀 Como Rodar o Projeto (Guia para o Time de Front-end)
+## Como Rodar o Projeto (Guia para o Time de Front-end)
 
 O backend (API, DB, IA 1) tá todo "encaixotado" no Docker. O frontend (HTML/JS/CSS) roda localmente na sua máquina.
 
@@ -70,8 +70,8 @@ O backend (API, DB, IA 1) tá todo "encaixotado" no Docker. O frontend (HTML/JS/
 ### 1. Clonar o Repositório
 
 ```bash
-git clone [URL_DO_NOSSO_REPOSITORIO_GIT]
-cd coffeenet
+git clone https://github.com/EstevaoAugusto/Trabalho-GCC129.git
+cd Trabalho-GCC129/
 ```
 
 ### 2. Configurar Variáveis de Ambiente (Obrigatório)
