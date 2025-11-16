@@ -26,11 +26,14 @@ Explicando como as peças se encaixam, focando nos conceitos da disciplina de Si
 
 ### Por que isso é um Sistema Distribuído?
 
-Nosso sistema não é um programa único. Ele é um **conjunto de peças independentes** (programas menores) que precisam conversar pela rede para funcionar. Pense numa banda:
+Nosso sistema não é um programa único. Ele é um **conjunto de peças independentes** (programas menores) que precisam conversar pela rede para funcionar:
 
-* O **Backend Principal (FastAPI)** é o vocalista: ele comanda o show, fala com o público (Frontends) e diz o que os outros músicos devem fazer.
-* O **Banco de Dados (PostgreSQL)** é o baterista: ele guarda o ritmo e a memória de tudo.
-* A **IA (spaCy)** é o guitarrista especialista: ele só faz uma coisa (entender texto), mas faz muito bem.
+* **Frontend 1(Cliente)**: página onde os usuários realizarão seus pedidos, acompanhar o status, e selecionar sugestões do Gemini.
+* **Frontend 2(Cozinha)**: página onde os funcionários poderão adicionar produtos, colocar descontos, e alterar o status do pedido conforme ele seja produzido pro cliente.
+* **Backend Principal (FastAPI)**: responsável por gerenciar a comunicação e a coordenação entre os diversos componentes do CoffeeNet, que podem utilizar diferentes protocolos, serviços e regras de negócio. Atua como camada central, garantindo integração eficiente entre front-end, bancos de dados e serviços distribuídos.
+* **Banco de Dados (PostgreSQL)**: responsável por armazenar os itens disponíveis na cafeteria, como por exemplo: pão de queijo, café, suco de laranja, entre outros. Quando Backend envia pedidos de consulta para ele, o PostgreSQL os processa e retorna as tabelas desejadas de forma estruturada. 
+* **IA 1(spaCy)**: Biblioteca focado em Processamento de Linguagem Natural (PLN). Seu uso é garantir que as respostas do usuário sejam convertidas em pedidos de formato estruturado e consistente.
+* **IA 2(Gemini)**: IA na nuvem focada em receber mensagens do Backend afim de gerar sugestões para o usuário baseado no histórico dele armazenado no banco de dados, por exemplo: caso o usuário pedir apenas um bolo de fuba, o Gemini pode gerar sugerir um outro item do cardápio para acompanhar o pedido.
 
 Eles são programas separados, rodando em "caixas" (contêineres Docker) diferentes, e se comunicam por chamadas de rede (HTTP, SQL). Isso *é* um sistema distribuído.
 
@@ -47,7 +50,7 @@ A gente usa duas IAs diferentes:
 2. **IA 2: O "Vendedor Inteligente" (Gemini)**
 
    * **O que é?** É a IA "criativa" e externa (do Google, roda na nuvem).
-   * **Como funciona?** O nosso Backend Principal pega o pedido "traduzido" pela IA 1 (ex: `[{cafe, 2}]`), busca seu histórico no banco (ex: "cliente sempre pede pão de queijo") e as promoções ativas. Aí, ele monta um **prompt gigante** (uma ordem) para o Gemini, mais ou menos assim: "MISSÃO: O cliente pediu 2 cafés, mas esqueceu o pão de queijo (que é favorito dele). Confirme o café e sugira o pão de queijo. Responda APENAS como um barista."
+   * **Como funciona?** O nosso Backend Principal pega o pedido "traduzido" pela IA 1 (ex: `[{cafe, 2}]`), busca seu histórico no banco (ex: "cliente sempre pede pão de queijo") e as promoções ativas. Aí, ele monta uma ordem para o Gemini, mais ou menos assim: "MISSÃO: O cliente pediu 2 cafés, mas esqueceu o pão de queijo (que é favorito dele). Confirme o café e sugira o pão de queijo. Responda APENAS como um barista."
    * O Gemini, então, *gera* o texto da resposta que você vê no chat (ex: "Beleza! 2 cafés anotados. Notei que você esqueceu seu pão de queijo hoje... quer adicionar?"). Ele não sabe o que é um produto ou preço, ele só segue a missão que nosso backend deu.
 
 ### A Mágica do Tempo Real (WebSockets)
