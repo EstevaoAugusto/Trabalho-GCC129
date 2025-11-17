@@ -83,7 +83,7 @@ Isso é crucial, senão a IA 2 (Gemini) não funciona.
 
 Vá para a pasta backend/.
 
-Crie um arquivo chamado `.env` (copiando do `env.example` se tiver um, ou criando do zero).
+Crie um arquivo chamado `.env` (copiando do exemplo abaixo)
 
 Cole o conteúdo abaixo nele, substituindo `SUA_CHAVE_API_VEM_AQUI` pela sua chave do Gemini:
 
@@ -162,7 +162,21 @@ python -m http.server 8081
 * Cliente: [cliente@teste.com](mailto:cliente@teste.com) | Senha: 123
 * Cozinha: [cozinha@teste.com](mailto:cozinha@teste.com) | Senha: 123
 
-### 🛠️ Próximos Passos
+## 📚 Referências e Validação do Problema
 
-* **Frontend:** Evoluir a interface (design, usabilidade, componentes).
-* **Documentação:** Finalizar a Modelagem de Ameaças e a Visão Final Pós-Mitigação para o professor.
+A arquitetura do CoffeeNet resolve dores reais do mercado, validadas pelas seguintes autoridades:
+
+1.  **TOTVS: IA e Aumento de Vendas**
+    * **Fonte:** *Autoatendimento para Restaurantes: como funciona e soluções* (Blog TOTVS).
+    * **O que explica:** Valida nosso **Agente Gemini**. O artigo detalha que ferramentas de "venda sugestiva" (upsell) baseadas em Machine Learning são essenciais para aumentar o ticket médio, sugerindo itens complementares que o humano muitas vezes esquece.
+    * **Link:** [Ler artigo completo no Blog da TOTVS](https://www.totvs.com/blog/gestao-varejista/autoatendimento-para-restaurantes/)
+
+2.  **ABRASEL: Fim dos Erros na Cozinha**
+    * **Fonte:** *Tecnologia para melhorar a gestão do seu restaurante* (Associação Brasileira de Bares e Restaurantes).
+    * **O que explica:** Valida nosso **Frontend da Cozinha**. A associação aponta que a substituição de "blocos de papel" e comunicação verbal por telas automatizadas é a única forma eficaz de eliminar erros de produção e atrasos na entrega.
+    * **Link:** [Ler notícia no Portal da Abrasel](https://al.abrasel.com.br/noticias/noticias/tecnologia-para-melhorar-a-gestao-do-seu-restaurante/)
+
+3.  **SEBRAE: Eficiência Operacional**
+    * **Fonte:** *Gastronomia com tecnologia e inovação, novas tendências em serviços* (Portal Sebrae).
+    * **O que explica:** Valida a **Arquitetura Distribuída**. O texto reforça que a integração de interfaces online (como nosso Chatbot e WebSockets) é fundamental para "fazer mais com menos", garantindo a velocidade e a customização que o cliente moderno exige.
+    * **Link:** [Ler artigo no Portal Sebrae](https://sebrae.com.br/sites/PortalSebrae/artigos/gastronomia-com-tecnologia-e-inovacao-novas-tendencias-em-servicos,f47053b037056810VgnVCM1000001b00320aRCRD)
