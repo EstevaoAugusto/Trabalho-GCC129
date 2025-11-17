@@ -80,6 +80,8 @@ def parse_order_text(text: str, product_keywords: List[str]) -> List[Dict]:
         keyword_pattern = [{"LOWER": part} for part in kw_lower_parts] + [{"LIKE_NUM": True}]
         matcher.add(keyword + "_NUM_AFTER", [keyword_pattern])
 
+        matcher.add(keyword + "_SOLO", [[{"LOWER": part} for part in kw_lower_parts]])
+
     matches = matcher(doc)
     
     matches.sort(key=lambda x: (x[1], -(x[2] - x[1]))) 
@@ -92,13 +94,15 @@ def parse_order_text(text: str, product_keywords: List[str]) -> List[Dict]:
         span = doc[start:end]
         
         quantity = 1.0
-        keyword_match = rule_id_str.replace("_NUM_AFTER", "") 
+        keyword_match = rule_id_str.replace("_NUM_AFTER", "").replace("_SOLO", "") 
 
         try:
             if "_NUM_AFTER" in rule_id_str:
                  quantity = float(span[-1].text) 
+            elif "_SOLO" in rule_id_str:
+                 quantity = 1.0
             else:
-                 quantity = float(span[0].text) 
+                 quantity = float(span[0].text)
         except ValueError:
             quantity = 1.0 # Fallback
 
