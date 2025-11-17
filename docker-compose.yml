@@ -6,16 +6,12 @@ services:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
       - ./backend/.env
-    ports:
-      - "5433:5432"
     restart: unless-stopped
 
   ia_1_nlu:
     container_name: coffeenet_ia_1
     build:
       context: ./ia_1_nlu
-    ports:
-      - "8001:8001"
     restart: unless-stopped
 
   backend:
