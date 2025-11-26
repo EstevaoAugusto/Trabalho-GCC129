@@ -9,8 +9,12 @@ body {
     max-width: 1200px;
     margin: 0 auto;
 }
-.view { display: none; }
-.view.active { display: block; }
+
+.view.active.login { display: block; }
+.view.inactive.login { display: none; }
+.view.active.main { display: flex; }
+.view.inactive.main { display: none; }
+
 #login-view {
     max-width: 400px;
     margin: 50px auto;
@@ -39,7 +43,6 @@ button:hover { background-color: #5a3f2d; }
 .hidden { display: none !important; }
 
 #main-view {
-    display: flex;
     gap: 20px;
 }
 #chat-column, #status-column {
