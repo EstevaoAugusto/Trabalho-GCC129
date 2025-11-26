@@ -30,6 +30,24 @@
         let currentItemSuggestion = null;
         let currentMenu = [];
 
+        const btnShowMenu = document.getElementById("btn-show-menu");
+
+        btnShowMenu.addEventListener("click", () => {
+            if (currentMenu && currentMenu.length > 0) {
+                let menuText = "Nosso cardápio atual é:\n\n";
+                currentMenu.forEach(product => {
+                    if (product.em_promocao && product.preco_promocional != null) {
+                        menuText += `- ${product.nome} (Promoção: R$ ${product.preco_promocional.toFixed(2)})\n`;
+                    } else {
+                        menuText += `- ${product.nome} (R$ ${product.preco.toFixed(2)})\n`;
+                    }
+                });
+                addMessageToChat(menuText, "bot");
+            } else {
+                addMessageToChat("Desculpe, ainda não temos produtos disponíveis.", "bot");
+            }
+        });
+
         const STATUS_MAP = {
             0: "Recebido",
             1: "Em Produção",
